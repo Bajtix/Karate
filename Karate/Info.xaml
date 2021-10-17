@@ -33,7 +33,20 @@
                         <FormattedString>
                             <Span Text="Github" TextColor="Purple">
                                 <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="https://bajtix.xyz"/>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="https://github.com/Bajtix/Karate"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label Grid.Row="2" Grid.Column="0">Przyszłe wersje</Label>
+                <Label Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Roadmap - co kiedy" TextColor="Purple">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="https://github.com/Bajtix/Karate/blob/master/roadmap.md"/>
                                 </Span.GestureRecognizers>
                             </Span>
                         </FormattedString>
