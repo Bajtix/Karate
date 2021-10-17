@@ -36,12 +36,19 @@ namespace Karate {
         }
 
         private async void StartLogin(object sender, EventArgs e) {
-            Loading.IsVisible = true;
-            LoginForm.IsVisible = false;
+            await Device.InvokeOnMainThreadAsync(() => {
+                Loading.IsVisible = true;
+                LoginForm.IsVisible = false;
+            });
+            
             LoadingMessage.Text = "Wczytywanie serwisu BrusLib";
             LoadingSpinner.RotateTo(3600, 10000).GetAwaiter();
-            await Task.Run(async ()=> await Auth(Username.Text,Password.Text));
-
+            try {
+                await Task.Run(async () => await Auth(Username.Text, Password.Text));
+            }
+            catch (Exception exception) {
+                await DisplayAlert("na jowisza po trzykroć kurwa", exception.Message, "rydwan mi się spierdolił");
+            }
 
         }
 
@@ -49,8 +56,10 @@ namespace Karate {
             application.librusApi = await LibrusAuth.Authenticate(u, p, LoginActionHandler);
 
             if (!application.librusApi.successful) {
-                Loading.IsVisible = false;
-                LoginForm.IsVisible = true;
+                await Device.InvokeOnMainThreadAsync(() => {
+                    Loading.IsVisible = false;
+                    LoginForm.IsVisible = true;
+                });
                 
                 return;
             }

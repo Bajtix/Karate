@@ -44,8 +44,14 @@
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
     <BundleAssemblies>false</BundleAssemblies>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
-    <AndroidLinkTool>r8</AndroidLinkTool>
-    <AndroidLinkMode>Full</AndroidLinkMode>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidCreatePackagePerAbi>true</AndroidCreatePackagePerAbi>
+    <MandroidI18n />
+    <AndroidKeyStore>true</AndroidKeyStore>
+    <AndroidSigningKeyStore>C:\Users\bajti\AppData\Local\Xamarin\Mono for Android\Keystore\bajtixapps\bajtixapps.keystore</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>EVIta_12PI</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>bajtixapps</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>EVIta_12PI</AndroidSigningKeyPass>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
