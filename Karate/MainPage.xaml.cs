@@ -6,6 +6,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using BrusLib;
+using Xamarin.Essentials;
 using Xamarin.Forms.PlatformConfiguration;
 
 namespace Karate {
@@ -36,6 +37,11 @@ namespace Karate {
         }
 
         private async void StartLogin(object sender, EventArgs e) {
+            
+            await Xamarin.Essentials.Permissions.RequestAsync<Permissions.StorageWrite>();
+            await Xamarin.Essentials.Permissions.RequestAsync<Permissions.StorageRead>();
+            
+            
             await Device.InvokeOnMainThreadAsync(() => {
                 Loading.IsVisible = true;
                 LoginForm.IsVisible = false;

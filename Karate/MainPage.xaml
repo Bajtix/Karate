@@ -12,17 +12,16 @@
         </Grid.RowDefinitions>
         
         
-        <!-- <Label FontSize="100" HorizontalTextAlignment="Center" VerticalOptions="Center" Grid.Row="0">Karate</Label> -->
         <Image Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Source="karate_primary_logo.png" />
         <StackLayout Margin="20,0" Grid.Row="1" x:Name="LoginForm" IsVisible="True" VerticalOptions="Center">
             <Entry x:Name="Username" Placeholder="Nazwa użytkownika" Text=""></Entry>
             <Entry x:Name="Password" Placeholder="Hasło" IsPassword="true" Text="" Completed="StartLogin"></Entry>
             <Button TextColor="White" Background="{StaticResource KAccentBrush}" Clicked="StartLogin" Text="Login"></Button>
-            <Label x:Name="ErrorMessage" HorizontalTextAlignment="Center" Text="Twoje dane przesyłane są bezpośrednio między serwerami Synergia. Karate nie przekazuje ich osobom trzecim."></Label>
+            <Label x:Name="ErrorMessage" HorizontalTextAlignment="Center" Text="Twoje dane przesyłane są bezpośrednio między serwerami Synergia. Karate nie przekazuje ich osobom trzecim. Baja nie będzie przeglądał twoich DMów z nauczycielami."></Label>
         </StackLayout>
         <StackLayout Grid.Row="1" x:Name="Loading" IsVisible="False" VerticalOptions="Center" HorizontalOptions="Center" >
             <Image Source="loading.png" WidthRequest="100"  x:Name="LoadingSpinner" Rotation="90"/>
-            <Label x:Name="LoadingMessage" HorizontalTextAlignment="Center" Text="..."></Label>
+            <Label x:Name="LoadingMessage" HorizontalTextAlignment="Center" Text="jeśli to widzisz, coś się zjebało"></Label>
         </StackLayout>
         <Label Grid.Row="2" x:Name="Version" Text="..." HorizontalTextAlignment="End"></Label>
     </Grid>

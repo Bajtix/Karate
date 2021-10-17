@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -32,6 +32,10 @@ namespace Karate {
 
         private void GoToAbout(object sender, EventArgs e) {
             Navigation.PushModalAsync(new Info());
+        }
+        
+        private void GoToRoadmap(object sender, EventArgs e) {
+            Launcher.OpenAsync("https://github.com/Bajtix/Karate/blob/master/roadmap.md");
         }
     }
 }

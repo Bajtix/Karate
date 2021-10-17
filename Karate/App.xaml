@@ -4,5 +4,6 @@
              x:Class="Karate.App">
     <Application.Resources>
         <SolidColorBrush x:Key="KAccentBrush" Color="#650065"/>
+        
     </Application.Resources>
 </Application>

@@ -6,12 +6,14 @@
              x:Class="Karate.ToBeImplemented"
              x:DataType="karate:ToBeImplemented">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout VerticalOptions="Center" Margin="20,0">
             
             <Image Source="wip.png" HorizontalOptions="Center"/>
-            <Label FontSize="Title" HorizontalTextAlignment="Center">Funkcja niedostępna</Label>
+            <Label FontSize="35" HorizontalTextAlignment="Center">Funkcja niedostępna</Label>
             <Label FontSize="Large" HorizontalTextAlignment="Center" x:Name="Msg"></Label>
-            <Button Text="eee?" Clicked="GoToAbout"></Button>
+            
+            <Button Margin="0, 30, 0, 0" Text="eee?" Background="{StaticResource KAccentBrush}" Clicked="GoToAbout" />
+            <Button Text="Zobacz roadmap" Background="{StaticResource KAccentBrush}" Clicked="GoToRoadmap" />
             
         </StackLayout>
     </ContentPage.Content>
