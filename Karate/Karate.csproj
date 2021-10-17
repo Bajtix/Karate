@@ -25,4 +25,8 @@
     <ItemGroup>
       <None Include="Assets\karate_primary_logo.svg" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="obj\Debug\netstandard2.0" />
+    </ItemGroup>
 </Project>
