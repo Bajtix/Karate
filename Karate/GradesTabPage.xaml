@@ -6,7 +6,6 @@
              x:Class="Karate.GradesTabPage"
              Title="Oceny">
     <StackLayout>
-        <Label FontSize="52">Przeglądaj Oceny</Label>
         <ScrollView>
             <StackLayout x:Name="SubjectsView">
                 <BindableLayout.ItemTemplate>

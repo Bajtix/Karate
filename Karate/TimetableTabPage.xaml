@@ -13,20 +13,25 @@
             <BindableLayout.ItemTemplate>
                 <DataTemplate x:DataType="karate:DisplaySchoolDay">
                     <StackLayout>
-                        <Label FontSize="Title" Text="{Binding dayDisplay}"></Label>
-                        <StackLayout BindableLayout.ItemsSource="{Binding sd.lessons}" IsVisible="{Binding displayDay}">
+                        <Label FontSize="Title" Text="{Binding displayDate}"></Label>
+                        <StackLayout BindableLayout.ItemsSource="{Binding displayLessons}" IsVisible="{Binding shouldDisplayLessons}">
                             <BindableLayout.ItemTemplate>
-                                <DataTemplate x:DataType="brusLib:Lesson">
-                                    <Grid ColumnDefinitions="40, *, 160">
-                                        <Label Grid.Column="0" HorizontalTextAlignment="Center" FontSize="18" Text="{Binding lessonNum}"></Label>
-                                        <Label Grid.Column="1" FontSize="18" Text="{Binding name}" HorizontalOptions="Fill">
+                                <DataTemplate x:DataType="karate:DisplayLesson">
+                                    <Grid ColumnDefinitions="40, 160, *">
+                                        <Label Grid.Column="0" HorizontalTextAlignment="Center" FontSize="18" Text="{Binding LessonNo}" />
+                                        <Label Grid.Column="1" HorizontalTextAlignment="Center" Text="{Binding Time}" />
+                                        <Label Grid.Column="2" FontSize="18" Text="{Binding LessonName}" HorizontalOptions="Fill" >
                                             <Label.Triggers>
-                                                <DataTrigger TargetType="Label" Binding="{Binding isReplacement}" Value="true">
+                                                <DataTrigger TargetType="Label" Binding="{Binding IsReplacement}" Value="true">
                                                     <Setter Property="TextColor"  Value="Green" />
+                                                </DataTrigger>
+                                                <DataTrigger TargetType="Label" Binding="{Binding IsCancelled}" Value="true">
+                                                    <Setter Property="TextColor" Value="Red" />
+                                                    <Setter Property="TextDecorations" Value="Strikethrough" />
                                                 </DataTrigger>
                                             </Label.Triggers>
                                         </Label>
-                                        <Label Grid.Column="2" Text="{Binding from}"></Label>
+                                        
                                     </Grid>
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>

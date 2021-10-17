@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Generic;
 using System.Linq;
 using BrusLib;
 
@@ -6,14 +7,19 @@ namespace Karate {
     public class DisplaySchoolDay {
         public SchoolDay sd { get; private set; }
 
-        public bool displayDay { get; private set; }
-        public string dayDisplay { get; private set; }
+        public List<DisplayLesson> displayLessons { get; private set; } = new List<DisplayLesson>();
+        
+        public bool shouldDisplayLessons { get; private set; }
+        public string displayDate { get; private set; }
 
         public DisplaySchoolDay(SchoolDay d) {
-            dayDisplay = d.day.DayOfWeek.ToString() + "  ";
-            dayDisplay += d.day.ToString("dd.MM");
+            displayDate = d.day.DayOfWeek + "  ";
+            displayDate += d.day.ToString("dd.MM");
             sd = d;
-            displayDay = sd.lessons.Any((w) => w.name != "");
+            foreach (var aLesson in d.lessons) {
+                displayLessons.Add(new DisplayLesson(aLesson));
+            }
+            shouldDisplayLessons = sd.lessons.Any((w) => w.name != "");
         }
     }
 }
