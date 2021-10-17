@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="3" android:versionName="v0.2a" package="xyz.bajtix.Karate">
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
+    <application android:label="Karate.Android" android:icon="@drawable/loading">
+        
+    </application>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    
+    
+    
+</manifest>

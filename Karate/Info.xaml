@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:karate="clr-namespace:Karate;assembly=Karate"
+             x:Class="Karate.Info">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Image HorizontalOptions="Center" Source="karate_primary_logo.png" Margin="0,60" />
+            <Grid ColumnDefinitions="*,*" RowDefinitions="auto,auto,auto" HorizontalOptions="Fill" Padding="40,0" VerticalOptions="Center">
+                <Label Grid.Row="0" Grid.Column="0">Autor</Label>
+                <Label Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="bajtixone" TextColor="Purple">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="https://twitter.com/bajtix"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                
+                
+                
+                
+                <Label Grid.Row="1" Grid.Column="0">Wersja</Label>
+                <Label Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Center" Text="{Binding version}"></Label>
+                
+                <Label Grid.Row="2" Grid.Column="0">Kod źródłowy</Label>
+                <Label Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Github" TextColor="Purple">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="https://bajtix.xyz"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

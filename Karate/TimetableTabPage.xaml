@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:generic="clr-namespace:System.Collections.Generic;assembly=netstandard"
+             xmlns:brusLib="clr-namespace:BrusLib;assembly=BrusLib"
+             xmlns:karate="clr-namespace:Karate;assembly=Karate"
+             x:Class="Karate.TimetableTabPage"
+             Title="Plan">
+    <ScrollView HorizontalScrollBarVisibility="Always">
+        <StackLayout Orientation="Vertical" x:Name="SchoolDayDisplay">
+            
+            <BindableLayout.ItemTemplate>
+                <DataTemplate x:DataType="karate:DisplaySchoolDay">
+                    <StackLayout>
+                        <Label FontSize="Title" Text="{Binding dayDisplay}"></Label>
+                        <StackLayout BindableLayout.ItemsSource="{Binding sd.lessons}" IsVisible="{Binding displayDay}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="brusLib:Lesson">
+                                    <Grid ColumnDefinitions="40, *, 160">
+                                        <Label Grid.Column="0" HorizontalTextAlignment="Center" FontSize="18" Text="{Binding lessonNum}"></Label>
+                                        <Label Grid.Column="1" FontSize="18" Text="{Binding name}" HorizontalOptions="Fill">
+                                            <Label.Triggers>
+                                                <DataTrigger TargetType="Label" Binding="{Binding isReplacement}" Value="true">
+                                                    <Setter Property="TextColor"  Value="Green" />
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                        <Label Grid.Column="2" Text="{Binding from}"></Label>
+                                    </Grid>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </StackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

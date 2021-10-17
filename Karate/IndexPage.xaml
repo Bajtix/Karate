@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             xmlns:lib="clr-namespace:BrusLib;assembly=BrusLib"
+             xmlns:karate="clr-namespace:Karate;assembly=Karate"
+             x:Class="Karate.IndexPage"
+             Title="Panel ucznia"
+             BarBackground="{StaticResource KAccentBrush}"
+             TabIndex="2">
+    
+    <karate:GradesTabPage x:Name="GradesPage"/>
+    
+    <ContentPage Title="Dzisiaj">
+        <StackLayout>
+            <Image Source="under_construction.png" />
+            <Label FontSize="42">Tutaj w wersji 0.7r będzie plan lekcji uwzględniający sprawdziany</Label>
+            
+        </StackLayout>
+        
+    </ContentPage>
+    
+    <karate:ToBeImplemented Message="Do zaimplementowania!"/>
+    
+    <karate:TimetableTabPage x:Name="TimetablePage"/>
+    
+    
+    <ContentPage Title="Kalendarz">
+        <Label FontSize="42">Tutaj w wersji 0.3r będzie terminarz na ten miesiąc</Label>
+    </ContentPage>
+</TabbedPage>

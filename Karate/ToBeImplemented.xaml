@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:karate="clr-namespace:Karate;assembly=Karate"
+             x:Class="Karate.ToBeImplemented"
+             x:DataType="karate:ToBeImplemented">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <Image Source="wip.png" HorizontalOptions="Center"/>
+            <Label FontSize="Title" HorizontalTextAlignment="Center">Funkcja niedostępna</Label>
+            <Label FontSize="Large" HorizontalTextAlignment="Center" x:Name="Msg"></Label>
+            <Button Text="eee?" Clicked="GoToAbout"></Button>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
