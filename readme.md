@@ -13,7 +13,7 @@ Karate jest w pełni darmowym, open-source alternatywą dla aplikaji Librus. Obe
 | Funkcja | Wsparcie |
 |--|--|
 | Oceny | ✔️ |
-| Plan lekcji | od 0.2r
+| Plan lekcji | ✔️ |
 | Terminarz | od 0.3r |
 | Wiadomości | od 0.6r |
 | Zobacz roadmap Karate | [tutaj](https://github.com/Bajtix/Karate/blob/master/roadmap.md) |
