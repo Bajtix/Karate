@@ -8,7 +8,9 @@
              x:Class="Karate.IndexPage"
              Title="Panel ucznia"
              BarBackground="{StaticResource KAccentBrush}"
-             TabIndex="2">
+             TabIndex="2"
+             x:Name="TabViewIndex"
+             CurrentPageChanged="IndexPage_OnCurrentPageChanged">
     
     <karate:GradesTabPage IconImageSource="grade_icon.png" x:Name="GradesPage"/>
 
@@ -17,5 +19,7 @@
     <karate:MessagesTabPage IconImageSource="mail_icon.png" x:Name="MessagesPage"/>
 
     <karate:ToBeImplemented IconImageSource="calendar_icon.png" Message="Tutaj wkrótce znajdzie się Terminarz"/>
+    
+    <karate:Info Title="Info"/>
 
 </TabbedPage>

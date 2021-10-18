@@ -17,18 +17,23 @@ namespace Karate {
         
         public IndexPage(App application) {
             this.application = application;
+            application.IndexPage = this;
+            
             InitializeComponent();
-
-            Task.Run(GradesPage.FetchGrades);
-            Task.Run(TimetablePage.FetchTT);
+            
+            application.MainPage = this;
         }
         
-        
-        
+
 
         protected override bool OnBackButtonPressed() {
             return true;
         }
-        
+
+        private void IndexPage_OnCurrentPageChanged(object sender, EventArgs e) {
+            if (CurrentPage is LibPage) {
+                (CurrentPage as LibPage).OnLoad();
+            }
+        }
     }
 }

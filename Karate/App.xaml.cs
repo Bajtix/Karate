@@ -8,6 +8,8 @@ using Xamarin.Forms.Xaml;
 namespace Karate {
     public partial class App : Application {
         public LibrusConnection librusApi;
+        public IndexPage IndexPage;
+        
         public App() {
             InitializeComponent();
             Current.UserAppTheme = OSAppTheme.Light;

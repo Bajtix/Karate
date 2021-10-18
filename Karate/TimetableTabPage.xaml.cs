@@ -10,24 +10,36 @@ using Xamarin.Forms.Xaml;
 
 namespace Karate {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TimetableTabPage : ContentPage {
+    public partial class TimetableTabPage : LibPage {
 
         private App application;
         
         public TimetableTabPage() {
             application = Application.Current as App;
             InitializeComponent();
+
+            
         }
-        
+
+        public override void OnFirstLoad() {
+            ShowLoader();
+            Task.Run(FetchTT);
+        }
+
+
         public async Task FetchTT() {
+            
             LibrusTimetable tt = await LibrusTimetable.Retrieve(application.librusApi);
             List<DisplaySchoolDay> displayList = new List<DisplaySchoolDay>();
             tt.week.ForEach((day => displayList.Add(new DisplaySchoolDay(day))));
 
             await Device.InvokeOnMainThreadAsync(() => {
                 BindableLayout.SetItemsSource(SchoolDayDisplay, displayList);
+                HideLoader();
             });
 
         }
+
+        
     }
 }

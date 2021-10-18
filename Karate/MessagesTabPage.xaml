@@ -1,12 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<karate:LibPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:brusLib="clr-namespace:BrusLib;assembly=BrusLib"
+             xmlns:karate="clr-namespace:Karate;assembly=Karate"
              x:Class="Karate.MessagesTabPage">
     <ContentPage.Content>
         <Grid RowDefinitions="52,*" Margin="10,0">
-            <Label Grid.Row="0" FontSize="48">Wiadomości</Label>
+            <Grid Grid.Row="0" ColumnDefinitions="*, 90">
+                <Label FontSize="48">Wiadomości</Label>
+                <Button Grid.Column="1" Text="Napisz" VerticalOptions="Center" Background="{StaticResource KAccentBrush}" TextColor="White" Clicked="CreateMessage"></Button>
+            </Grid>
+            
             <ListView Grid.Row="1" x:Name="MessageDisplay" SelectionMode="None" ItemTapped="MessageDisplay_OnItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="brusLib:LibrusMessage">
@@ -23,4 +28,4 @@
             </ListView>
         </Grid>
     </ContentPage.Content>
-</ContentPage>
+</karate:LibPage>

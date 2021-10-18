@@ -9,27 +9,37 @@ using Xamarin.Forms.Xaml;
 
 namespace Karate {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MessagesTabPage : ContentPage {
+    public partial class MessagesTabPage : LibPage {
         private App application;
         
         public MessagesTabPage() {
             application = Application.Current as App;
             InitializeComponent();
 
+            
+        }
+
+        public override void OnFirstLoad() {
+            ShowLoader();
             Task.Run(FetchMessages);
         }
-        
+
         public async Task FetchMessages() {
             LibrusMessageReceiver receiver = await LibrusMessageReceiver.Retrieve(application.librusApi);
             var messages = receiver.messages;
             Device.InvokeOnMainThreadAsync(()=> {
                 //BindableLayout.SetItemsSource(MessageDisplay, messages);
                 MessageDisplay.ItemsSource = messages;
+                HideLoader();
             });
         }
 
         private void MessageDisplay_OnItemTapped(object sender, ItemTappedEventArgs e) {
             Navigation.PushModalAsync(new ViewMessagePage((LibrusMessage)e.Item));
+        }
+
+        private void CreateMessage(object sender, EventArgs e) {
+            Navigation.PushModalAsync(new ToBeImplemented("Pisanie wiadomości nadejdzie w przyszłości"));
         }
     }
 }

@@ -31,7 +31,9 @@ namespace Karate {
         }
 
         private void GoToAbout(object sender, EventArgs e) {
-            Navigation.PushModalAsync(new Info());
+            //Navigation.PushModalAsync(new Info());
+            Navigation.PopModalAsync();
+            (Application.Current as App).IndexPage.CurrentPage = (Application.Current as App).IndexPage.Children[4];
         }
         
         private void GoToRoadmap(object sender, EventArgs e) {

@@ -9,7 +9,7 @@ using Xamarin.Forms.Xaml;
 
 namespace Karate {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GradesTabPage : ContentPage {
+    public partial class GradesTabPage : LibPage {
         private App application;
         public GradesTabPage(App application) {
             this.application = application;
@@ -19,14 +19,21 @@ namespace Karate {
         public GradesTabPage() {
             this.application = (App)Application.Current;
             InitializeComponent();
+            
+            
         }
-        
+
+        public override void OnFirstLoad() {
+            ShowLoader();
+            Task.Run(FetchGrades);
+        }
+
         public async Task FetchGrades() {
             LibrusGrades grades = await LibrusGrades.Retrieve(application.librusApi);
             var ss = grades.subjects.Where((w) => w.grades1.Length > 0 || w.grades2.Length > 0);
-            BindableLayout.SetItemsSource(SubjectsView, ss);
+            //BindableLayout.SetItemsSource(SubjectsView, ss);
             
-            /*List<Subject> subjects = new List<Subject>();
+            List<Subject> subjects = new List<Subject>();
             foreach (var s in ss) {
                 subjects.Add(s);
 
@@ -34,8 +41,9 @@ namespace Karate {
                 
                 Device.BeginInvokeOnMainThread(() => {
                     BindableLayout.SetItemsSource(SubjectsView, subjects.ToArray());
+                    HideLoader();
                 });
-            }*/
+            }
         }
     }
 }
