@@ -7,7 +7,7 @@
              x:DataType="karate:ViewMessagePage">
     <ContentPage.Content>
         <StackLayout>
-            <Grid RowDefinitions="auto, auto, auto, auto, *">
+            <Grid RowDefinitions="auto, auto, auto, auto, *" Margin="10,0">
                 <Label Grid.Row="0" FontSize="48" Text="Wiadomość"></Label>
                 <Label Grid.Row="1" FontSize="Title" Text="{Binding Path=Title, StringFormat='> {0}'}"></Label>
                 <Label Grid.Row="2" FontSize="Subtitle" Text="{Binding Path=Author, StringFormat='Autor: {0}'}"></Label>

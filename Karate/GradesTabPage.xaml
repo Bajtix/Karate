@@ -3,21 +3,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:brusLib="clr-namespace:BrusLib;assembly=BrusLib"
-             x:Class="Karate.GradesTabPage"
-             Title="Oceny">
+             x:Class="Karate.GradesTabPage">
     <StackLayout>
         <ScrollView>
             <StackLayout x:Name="SubjectsView">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="brusLib:Subject">
-                        <StackLayout>
+                        <StackLayout Margin="10,0">
                             <Label FontSize="Title" Text="{Binding name}"></Label>
                             <StackLayout BindableLayout.ItemsSource="{Binding grades1}" x:Class="GradesList">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate x:DataType="brusLib:Grade">
-                                        <Grid ColumnDefinitions="50, *, 2*" BackgroundColor="{Binding color}">
+                                        <Grid ColumnDefinitions="50, *, 2*" BackgroundColor="{Binding color}" >
                                             <Label Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="32" Text="{Binding grade}"/>
-                                            <Label Grid.Column="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large" Text="{Binding category}"/>
+                                            <Label Grid.Column="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="20" Text="{Binding category}"/>
                                             <Label Grid.Column="2" VerticalTextAlignment="Center" FontSize="Medium" Text="{Binding comment}"/>
                                         </Grid>
                                     </DataTemplate>

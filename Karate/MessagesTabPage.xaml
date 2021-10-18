@@ -5,9 +5,8 @@
              xmlns:brusLib="clr-namespace:BrusLib;assembly=BrusLib"
              x:Class="Karate.MessagesTabPage">
     <ContentPage.Content>
-        <Grid RowDefinitions="50,*">
-            <!-- <ScrollView Grid.Row="1"> -->
-            <Label Grid.Row="0" FontSize="48">Wiadomości ( więcej funkcji wkrótce )</Label>
+        <Grid RowDefinitions="52,*" Margin="10,0">
+            <Label Grid.Row="0" FontSize="48">Wiadomości</Label>
             <ListView Grid.Row="1" x:Name="MessageDisplay" SelectionMode="None" ItemTapped="MessageDisplay_OnItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="brusLib:LibrusMessage">
@@ -22,8 +21,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <!-- </ScrollView> -->
-            
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -5,8 +5,7 @@
              xmlns:generic="clr-namespace:System.Collections.Generic;assembly=netstandard"
              xmlns:brusLib="clr-namespace:BrusLib;assembly=BrusLib"
              xmlns:karate="clr-namespace:Karate;assembly=Karate"
-             x:Class="Karate.TimetableTabPage"
-             Title="Plan">
+             x:Class="Karate.TimetableTabPage">
     <ScrollView HorizontalScrollBarVisibility="Always">
         <StackLayout Orientation="Vertical" x:Name="SchoolDayDisplay" Margin="10">
             

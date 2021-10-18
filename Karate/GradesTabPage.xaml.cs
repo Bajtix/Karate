@@ -24,8 +24,9 @@ namespace Karate {
         public async Task FetchGrades() {
             LibrusGrades grades = await LibrusGrades.Retrieve(application.librusApi);
             var ss = grades.subjects.Where((w) => w.grades1.Length > 0 || w.grades2.Length > 0);
-
-            List<Subject> subjects = new List<Subject>();
+            BindableLayout.SetItemsSource(SubjectsView, ss);
+            
+            /*List<Subject> subjects = new List<Subject>();
             foreach (var s in ss) {
                 subjects.Add(s);
 
@@ -34,7 +35,7 @@ namespace Karate {
                 Device.BeginInvokeOnMainThread(() => {
                     BindableLayout.SetItemsSource(SubjectsView, subjects.ToArray());
                 });
-            }
+            }*/
         }
     }
 }
