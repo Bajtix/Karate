@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:brusLib="clr-namespace:BrusLib;assembly=BrusLib"
+             x:Class="Karate.MessagesTabPage">
+    <ContentPage.Content>
+        <Grid RowDefinitions="50,*">
+            <!-- <ScrollView Grid.Row="1"> -->
+            <Label Grid.Row="0" FontSize="48">Wiadomości ( więcej funkcji wkrótce )</Label>
+            <ListView Grid.Row="1" x:Name="MessageDisplay" SelectionMode="None" ItemTapped="MessageDisplay_OnItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="brusLib:LibrusMessage">
+                        <ViewCell>
+                            <Grid ColumnDefinitions="*,4*,5*">
+                                <Label VerticalOptions="Center" Grid.Column="0" FontSize="Small" Text="{Binding Path=ReceiveDate, StringFormat='{0:dd.MM HH:mm}' }" />
+                                <Label VerticalOptions="Center" Grid.Column="1" Text="{Binding Author}" />
+                                <Label VerticalOptions="Center" Grid.Column="2" Text="{Binding  Title}" />
+                            </Grid>
+                        </ViewCell>
+                        
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!-- </ScrollView> -->
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

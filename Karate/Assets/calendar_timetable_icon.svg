@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="256"
+   height="256"
+   viewBox="0 0 67.733333 67.733333"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="calendar_timetable_icon.svg"
+   inkscape:export-filename="C:\Users\bajti\RiderProjects\Karate\Karate\Assets\calendar_icon.png"
+   inkscape:export-xdpi="200"
+   inkscape:export-ydpi="200"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     width="256px"
+     inkscape:zoom="2.276"
+     inkscape:cx="25.263621"
+     inkscape:cy="117.97013"
+     inkscape:window-width="2560"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Warstwa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:none">
+    <path
+       id="rect907"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:15.1181;stroke-linejoin:round;stroke-opacity:0.11583"
+       d="m 35.417969,20.193359 c -9.29429,0 -16.777344,7.483054 -16.777344,16.777344 V 219.0293 c 0,9.29429 7.483054,16.77734 16.777344,16.77734 H 220.58203 c 9.29429,0 16.77735,-7.48305 16.77735,-16.77734 V 36.970703 c 0,-9.29429 -7.48306,-16.777344 -16.77735,-16.777344 z M 24.232422,69.523438 H 231.76758 V 139.26172 H 24.232422 Z m 0,78.833982 H 231.76758 V 218.0957 H 24.232422 Z"
+       transform="scale(0.26458333)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Warstwa 4"
+     style="display:inline">
+    <path
+       id="rect907-1"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:15.1181;stroke-linejoin:round;stroke-opacity:0.11583"
+       d="m 35.417969,20.193359 c -9.29429,0 -16.777344,7.483054 -16.777344,16.777344 V 219.0293 c 0,9.29429 7.483054,16.77734 16.777344,16.77734 H 220.58203 c 9.29429,0 16.77735,-7.48305 16.77735,-16.77734 V 36.970703 c 0,-9.29429 -7.48306,-16.777344 -16.77735,-16.777344 z M 24.232422,69.523438 H 123.4707 V 139.26172 H 24.232422 Z m 108.296878,0 h 99.23828 V 139.26172 H 132.5293 Z M 24.232422,148.35938 H 123.4707 v 69.73828 H 24.232422 Z m 108.296878,0 h 99.23828 v 69.73828 H 132.5293 Z"
+       transform="scale(0.26458333)" />
+  </g>
+</svg>

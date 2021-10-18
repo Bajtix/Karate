@@ -10,12 +10,12 @@
              BarBackground="{StaticResource KAccentBrush}"
              TabIndex="2">
     
-    <karate:GradesTabPage x:Name="GradesPage"/>
+    <karate:GradesTabPage IconImageSource="grade_icon.png" x:Name="GradesPage"/>
 
-    <karate:ToBeImplemented Title="Dzisiaj" Message="Tutaj wkrótce znajdzie się połączenie planu lekcji z terminarzem"/>
+    <karate:TimetableTabPage IconImageSource="timetable_icon.png" x:Name="TimetablePage"/>
+    
+    <karate:MessagesTabPage IconImageSource="mail_icon.png" x:Name="MessagesPage"/>
 
-    <karate:TimetableTabPage x:Name="TimetablePage"/>
+    <karate:ToBeImplemented IconImageSource="calendar_icon.png" Message="Tutaj wkrótce znajdzie się Terminarz"/>
 
-
-    <karate:ToBeImplemented Title="Kalendarz" Message="Tutaj wkrótce znajdzie się Terminarz"/>
 </TabbedPage>

@@ -75,7 +75,11 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\calendar_icon.png" />
+    <AndroidResource Include="Resources\drawable\grade_icon.png" />
     <AndroidResource Include="Resources\drawable\loading.png" />
+    <AndroidResource Include="Resources\drawable\mail_icon.png" />
+    <AndroidResource Include="Resources\drawable\timetable_icon.png" />
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
