@@ -38,8 +38,8 @@ namespace Karate {
 
         private async void StartLogin(object sender, EventArgs e) {
             
-            await Xamarin.Essentials.Permissions.RequestAsync<Permissions.StorageWrite>();
-            await Xamarin.Essentials.Permissions.RequestAsync<Permissions.StorageRead>();
+            await Permissions.RequestAsync<Permissions.StorageWrite>();
+            await Permissions.RequestAsync<Permissions.StorageRead>();
             
             
             await Device.InvokeOnMainThreadAsync(() => {

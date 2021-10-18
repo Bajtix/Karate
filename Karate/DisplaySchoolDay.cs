@@ -1,5 +1,6 @@
 ﻿
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using BrusLib;
 
@@ -13,8 +14,7 @@ namespace Karate {
         public string displayDate { get; private set; }
 
         public DisplaySchoolDay(SchoolDay d) {
-            displayDate = d.day.DayOfWeek + "  ";
-            displayDate += d.day.ToString("dd.MM");
+            displayDate = d.day.ToString("dddd, dd.MM", CultureInfo.CurrentCulture);
             sd = d;
             foreach (var aLesson in d.lessons) {
                 displayLessons.Add(new DisplayLesson(aLesson));

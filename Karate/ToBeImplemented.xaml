@@ -12,8 +12,8 @@
             <Label FontSize="35" HorizontalTextAlignment="Center">Funkcja niedostępna</Label>
             <Label FontSize="Large" HorizontalTextAlignment="Center" x:Name="Msg"></Label>
             
-            <Button Margin="0, 30, 0, 0" Text="eee?" Background="{StaticResource KAccentBrush}" Clicked="GoToAbout" />
-            <Button Text="Zobacz roadmap" Background="{StaticResource KAccentBrush}" Clicked="GoToRoadmap" />
+            <Button TextColor="White" Margin="0, 30, 0, 0" Text="eee?" Background="{StaticResource KAccentBrush}" Clicked="GoToAbout" />
+            <Button TextColor="White" Text="Zobacz roadmap" Background="{StaticResource KAccentBrush}" Clicked="GoToRoadmap" />
             
         </StackLayout>
     </ContentPage.Content>
