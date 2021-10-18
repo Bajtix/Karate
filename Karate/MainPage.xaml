@@ -17,7 +17,7 @@
             <Entry x:Name="Username" Placeholder="Nazwa użytkownika" Text=""></Entry>
             <Entry x:Name="Password" Placeholder="Hasło" IsPassword="true" Text="" Completed="StartLogin"></Entry>
             <Button TextColor="White" Background="{StaticResource KAccentBrush}" Clicked="StartLogin" Text="Login"></Button>
-            <Label x:Name="ErrorMessage" HorizontalTextAlignment="Center" Text="Twoje dane przesyłane są bezpośrednio między serwerami Synergia. Karate nie przekazuje ich osobom trzecim. Baja nie będzie przeglądał twoich DMów z nauczycielami."></Label>
+            <Label x:Name="ErrorMessage" HorizontalTextAlignment="Center" Text="Twoje dane przesyłane są bezpośrednio między serwerami Synergia. Karate nie przekazuje ich osobom trzecim. Spokojnie, nie będę śmiał się z twoich ocen z matmy."></Label>
         </StackLayout>
         <StackLayout Grid.Row="1" x:Name="Loading" IsVisible="False" VerticalOptions="Center" HorizontalOptions="Center" >
             <Image Source="loading.png" WidthRequest="100"  x:Name="LoadingSpinner" Rotation="90"/>
