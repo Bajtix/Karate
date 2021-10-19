@@ -6,6 +6,8 @@ s based on [BrusLib](https://github.com/Bajtix/BrusLib). It's not really gonna b
 ## Pobierz
 Patrz: [sekcja releases](https://github.com/Bajtix/Karate/releases/latest)
 
+[Dołącz też na nasz discord](https://discord.gg/5JqsrftQwd)
+
 ## Czym jest Karate?
 Karate jest w pełni darmowym, open-source alternatywą dla aplikaji Librus. Obecna wersja to `0.3a`, a w planach mamy:
 > Karate nie jest powiązane z firmą Librus sp z.o.o. i nie jest oficjalne
