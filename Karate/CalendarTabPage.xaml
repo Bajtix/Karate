@@ -8,11 +8,13 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Kalendarz" FontSize="48"></Label>
-            <Button Clicked="Button_OnClicked" Text="Reload"></Button>
             <Grid x:Name="WeekDisplay">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="karate:DisplayCalendarDay">
                         <Frame BorderColor="Purple" Grid.Column="{Binding  WeekGridY}" Grid.Row="{Binding WeekGridX}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapCommand}"></TapGestureRecognizer>
+                            </Frame.GestureRecognizers>
                             <StackLayout>
                                 <Label Text="{Binding DayIndex}" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
                                 <FlexLayout BindableLayout.ItemsSource="{Binding Events}">
