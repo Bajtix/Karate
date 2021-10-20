@@ -20,7 +20,7 @@
             <Label x:Name="ErrorMessage" HorizontalTextAlignment="Center" Text="Twoje dane przesyłane są bezpośrednio między serwerami Synergia. Karate nie przekazuje ich osobom trzecim. Spokojnie, nie będę śmiał się z twoich ocen z matmy."></Label>
         </StackLayout>
         <StackLayout Grid.Row="1" x:Name="Loading" IsVisible="False" VerticalOptions="Center" HorizontalOptions="Center" >
-            <Image Source="loading.png" WidthRequest="100"  x:Name="LoadingSpinner" Rotation="90"/>
+            <Image Source="karate_loading.gif" WidthRequest="200"  x:Name="LoadingSpinner" IsAnimationPlaying="True"/>
             <Label x:Name="LoadingMessage" HorizontalTextAlignment="Center" Text="jeśli to widzisz, coś się zjebało"></Label>
         </StackLayout>
         <Label Grid.Row="2" x:Name="Version" Text="..." HorizontalTextAlignment="End"></Label>

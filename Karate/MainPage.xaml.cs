@@ -48,7 +48,7 @@ namespace Karate {
             });
             
             LoadingMessage.Text = "Wczytywanie serwisu BrusLib";
-            LoadingSpinner.RotateTo(3600, 10000).GetAwaiter();
+            //LoadingSpinner.RotateTo(3600, 10000).GetAwaiter();
             try {
                 await Task.Run(async () => await Auth(Username.Text, Password.Text));
             }

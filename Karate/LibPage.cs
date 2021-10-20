@@ -16,11 +16,10 @@ namespace Karate {
 
         protected void ShowLoader() {
             backup = Content;
-            Loader = new Image() {HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.Center, Source = ImageSource.FromFile("loading.png"), HeightRequest = 200};
+            Loader = new Image() {HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.Center, Source = ImageSource.FromFile("loading.png"), HeightRequest = 200, IsAnimationPlaying = false};
             
             Content = Loader;
             
-            Loader.RotateTo(3600, 10);
         }
 
         protected void HideLoader() {
