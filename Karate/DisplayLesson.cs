@@ -6,7 +6,6 @@ namespace Karate {
         public string LessonName { get; }
         public string StartsAt { get; }
         public string EndsAt { get; }
-        
         public bool IsReplacement { get; }
         public bool IsCancelled { get; }
         
@@ -15,7 +14,7 @@ namespace Karate {
         
         public DisplayLesson(Lesson l) {
             LessonName = l.name;
-            Teacher = l.teacher;
+            Teacher = l.Teacher;
             LessonNo = l.lessonNum;
             StartsAt = l.from.ToString("HH:mm");
             EndsAt = l.to.ToString("HH:mm");
