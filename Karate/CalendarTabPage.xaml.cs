@@ -29,7 +29,7 @@ namespace Karate {
             //Dictionary<DateTime, List<CalendarEvent>> eventLists = new Dictionary<DateTime, List<CalendarEvent>>();
             List<DisplayCalendarDay> calendarDays = new List<DisplayCalendarDay>();
             foreach (var w in calendar.events) {
-               calendarDays.Add(new DisplayCalendarDay(w.Value, w.Key));
+               calendarDays.Add(new DisplayCalendarDay(w.Value, w.Key, this));
             }
 
 

@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Input;
 using BrusLib;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace Karate {
     public class DisplayCalendarDay {
-        public DisplayCalendarDay(List<CalendarEvent> events, DateTime day) {
+        private ContentPage creator;
+        public DisplayCalendarDay(List<CalendarEvent> events, DateTime day, ContentPage creator) {
             Events = events;
             DayIndex = day.Day;
-            
+            this.creator = creator;
             Day = day;
             
             int dayOfWeek = GetDayNumFromDoW(new DateTime(day.Year, day.Month, 1).DayOfWeek);
@@ -47,5 +51,12 @@ namespace Karate {
         public DateTime Day { get; }
         public int WeekGridX { get; }
         public int WeekGridY { get; }
+        
+        public ICommand TapCommand => new Command(() => {
+            Device.BeginInvokeOnMainThread(() => {
+                var page = new ViewCalendarPage(Day, Events);
+                creator.Navigation.PushModalAsync(page);
+            });
+        });
     }
 }
