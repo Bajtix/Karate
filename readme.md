@@ -5,6 +5,7 @@ s based on [BrusLib](https://github.com/Bajtix/BrusLib). It's not really gonna b
 
 ## Pobierz
 Patrz: [sekcja releases](https://github.com/Bajtix/Karate/releases/latest)
+> Pobierz najpierw plik bez niczego po myślniku!  (xyz.bajtix.Karate.apk)
 
 [Dołącz też na nasz discord](https://discord.gg/5JqsrftQwd)
 
