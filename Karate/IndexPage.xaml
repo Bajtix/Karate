@@ -18,7 +18,7 @@
     
     <karate:MessagesTabPage IconImageSource="mail_icon.png" x:Name="MessagesPage"/>
 
-    <karate:ToBeImplemented IconImageSource="calendar_icon.png" Message="Tutaj wkrótce znajdzie się Terminarz"/>
+    <karate:CalendarTabPage IconImageSource="calendar_icon.png" />
     
     <karate:Info Title="Info"/>
 

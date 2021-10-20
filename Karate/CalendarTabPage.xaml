@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<karate:LibPage xmlns="http://xamarin.com/schemas/2014/forms"
+         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+         xmlns:karate="clr-namespace:Karate;assembly=Karate"
+         xmlns:brusLib="clr-namespace:BrusLib;assembly=BrusLib"
+         x:Class="Karate.CalendarTabPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Kalendarz" FontSize="48"></Label>
+            <Button Clicked="Button_OnClicked" Text="Reload"></Button>
+            <Grid x:Name="WeekDisplay">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="karate:DisplayCalendarDay">
+                        <Frame BorderColor="Purple" Grid.Column="{Binding  WeekGridY}" Grid.Row="{Binding WeekGridX}">
+                            <StackLayout>
+                                <Label Text="{Binding DayIndex}" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                                <FlexLayout BindableLayout.ItemsSource="{Binding Events}">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate x:DataType="brusLib:CalendarEvent">
+                                            <Image Source="calendar_dot.png" HeightRequest="16" />
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </FlexLayout>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate> 
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</karate:LibPage>
