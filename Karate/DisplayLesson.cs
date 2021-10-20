@@ -4,6 +4,7 @@ namespace Karate {
     public class DisplayLesson {
         public int LessonNo { get; }
         public string LessonName { get; }
+        public string Classroom { get; }
         public string StartsAt { get; }
         public string EndsAt { get; }
         public bool IsReplacement { get; }
@@ -21,6 +22,7 @@ namespace Karate {
             IsReplacement = l.isReplacement;
             IsCancelled = l.isCancelled;
             Time = StartsAt + " - " + EndsAt;
+            Classroom = l.Classroom;
         }
     }
 }

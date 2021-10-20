@@ -16,7 +16,7 @@
                         <StackLayout BindableLayout.ItemsSource="{Binding displayLessons}" IsVisible="{Binding shouldDisplayLessons}">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate x:DataType="karate:DisplayLesson">
-                                    <Grid ColumnDefinitions="40, 100, *">
+                                    <Grid ColumnDefinitions="20, 100, *, 40">
                                         <Label Grid.Column="0" HorizontalTextAlignment="Center" FontSize="18" Text="{Binding LessonNo}" />
                                         <Label Grid.Column="1" HorizontalTextAlignment="Center" Text="{Binding Time}" />
                                         <Label Grid.Column="2" FontSize="18" Text="{Binding LessonName}" HorizontalOptions="Fill" >
@@ -30,6 +30,7 @@
                                                 </DataTrigger>
                                             </Label.Triggers>
                                         </Label>
+                                        <Label Grid.Column="3" HorizontalTextAlignment="Center" Text="{Binding Classroom}" />
                                     </Grid>
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>
