@@ -5,39 +5,42 @@
              xmlns:generic="clr-namespace:System.Collections.Generic;assembly=netstandard"
              xmlns:brusLib="clr-namespace:BrusLib;assembly=BrusLib"
              xmlns:karate="clr-namespace:Karate;assembly=Karate"
-             x:Class="Karate.TimetableTabPage">
-    <ScrollView HorizontalScrollBarVisibility="Always">
-        <StackLayout Orientation="Vertical" x:Name="SchoolDayDisplay" Margin="10">
-            
-            <BindableLayout.ItemTemplate>
-                <DataTemplate x:DataType="karate:DisplaySchoolDay">
-                    <StackLayout>
-                        <Label FontSize="Title" Text="{Binding displayDate}"></Label>
-                        <StackLayout BindableLayout.ItemsSource="{Binding displayLessons}" IsVisible="{Binding shouldDisplayLessons}">
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate x:DataType="karate:DisplayLesson">
-                                    <Grid ColumnDefinitions="20, 100, *, 40">
-                                        <Label Grid.Column="0" HorizontalTextAlignment="Center" FontSize="18" Text="{Binding LessonNo}" />
-                                        <Label Grid.Column="1" HorizontalTextAlignment="Center" Text="{Binding Time}" />
-                                        <Label Grid.Column="2" FontSize="18" Text="{Binding LessonName}" HorizontalOptions="Fill" >
-                                            <Label.Triggers>
-                                                <DataTrigger TargetType="Label" Binding="{Binding IsReplacement}" Value="true">
-                                                    <Setter Property="TextColor"  Value="Green" />
-                                                </DataTrigger>
-                                                <DataTrigger TargetType="Label" Binding="{Binding IsCancelled}" Value="true">
-                                                    <Setter Property="TextColor" Value="Red" />
-                                                    <Setter Property="TextDecorations" Value="Strikethrough" />
-                                                </DataTrigger>
-                                            </Label.Triggers>
-                                        </Label>
-                                        <Label Grid.Column="3" HorizontalTextAlignment="Center" Text="{Binding Classroom}" />
-                                    </Grid>
-                                </DataTemplate>
-                            </BindableLayout.ItemTemplate>
+             x:Class="Karate.TimetableTabPage"
+             x:DataType="karate:TimetableTabPage">
+    <StackLayout>
+        <Picker x:Name="WeekPicker" ItemsSource="{Binding Weeks}" SelectedIndexChanged="ChangeWeek" Title="Wybierz tydzień" />
+        <ScrollView HorizontalScrollBarVisibility="Always">
+            <StackLayout Orientation="Vertical" x:Name="SchoolDayDisplay" Margin="10">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="karate:DisplaySchoolDay">
+                        <StackLayout>
+                            <Label FontSize="Title" Text="{Binding displayDate}"></Label>
+                            <StackLayout BindableLayout.ItemsSource="{Binding displayLessons}" IsVisible="{Binding shouldDisplayLessons}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate x:DataType="karate:DisplayLesson">
+                                        <Grid ColumnDefinitions="20, 100, *, 60">
+                                            <Label Grid.Column="0" HorizontalTextAlignment="Center" FontSize="18" Text="{Binding LessonNo}" />
+                                            <Label Grid.Column="1" HorizontalTextAlignment="Center" Text="{Binding Time}" />
+                                            <Label Grid.Column="2" FontSize="18" Text="{Binding LessonName}" HorizontalOptions="Fill" >
+                                                <Label.Triggers>
+                                                    <DataTrigger TargetType="Label" Binding="{Binding IsReplacement}" Value="true">
+                                                        <Setter Property="TextColor"  Value="Green" />
+                                                    </DataTrigger>
+                                                    <DataTrigger TargetType="Label" Binding="{Binding IsCancelled}" Value="true">
+                                                        <Setter Property="TextColor" Value="Red" />
+                                                        <Setter Property="TextDecorations" Value="Strikethrough" />
+                                                    </DataTrigger>
+                                                </Label.Triggers>
+                                            </Label>
+                                            <Label Grid.Column="3" HorizontalTextAlignment="Center" Text="{Binding Classroom}" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
                         </StackLayout>
-                    </StackLayout>
-                </DataTemplate>
-            </BindableLayout.ItemTemplate>
-        </StackLayout>
-    </ScrollView>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
 </karate:LibPage>

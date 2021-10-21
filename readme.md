@@ -5,7 +5,7 @@ s based on [BrusLib](https://github.com/Bajtix/BrusLib). It's not really gonna b
 
 ## Pobierz
 Patrz: [sekcja releases](https://github.com/Bajtix/Karate/releases/latest)
-> Pobierz najpierw plik bez niczego po myślniku!  (xyz.bajtix.Karate.apk)
+> Pobierz najpierw plik bez niczego po myślniku!  (xyz.bajtix.Karate.apk). Jeśli on nie zadziała, spróbuj resztę z nich.
 
 [Dołącz też na nasz discord](https://discord.gg/5JqsrftQwd)
 
@@ -20,6 +20,7 @@ Karate jest w pełni darmowym, open-source alternatywą dla aplikaji Librus. Obe
 | Wiadomości | odbieranie |
 | Terminarz | od 0.4r |
 | Prace domowe | w przyszłości |
+| Frekwencja | w przyszłości |
 | Zobacz roadmap Karate | [tutaj](https://github.com/Bajtix/Karate/blob/master/roadmap.md) |
 
 

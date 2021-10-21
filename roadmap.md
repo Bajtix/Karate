@@ -2,15 +2,18 @@
 ## 0.1r 
 - Oceny, główne działanie logowania
 
-## 0.2r < Wersja stabilna
+## 0.2r 
 - Plan lekcji oraz poprawki asynchronicznego wczytywania
 
-## 0.3r < Wersja alfa
+## 0.3r < Wersja stabilna
 - Odbieranie Wiadomości
 
-## 0.4r
+## 0.4r < Wersje testowe
 - Terminarz
 - Zmiana tygodnia na planie lekcji
+
+## 0.4f
+- Redesign ikon
 
 ## 0.5r
 - Wysyłanie wiadomości
