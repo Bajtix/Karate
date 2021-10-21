@@ -6,7 +6,7 @@
              xmlns:karate="clr-namespace:Karate;assembly=Karate"
              x:Class="Karate.ViewCalendarPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="10,0">
             <Label FontSize="48" x:Name="Date" />
             <ListView x:Name="Items" HasUnevenRows="True" SelectionMode="None">
                 <ListView.ItemTemplate>
@@ -16,6 +16,7 @@
                                 <Image Grid.Column="0" Source="calendar_dot.png" />
                                 <StackLayout Grid.Column="1">
                                     <Label Text="{Binding Category}" FontSize="Title" />
+                                    <Label Text="{Binding Subject}" FontSize="Subtitle" />
                                     <Label Text="{Binding  Description}" />
                                     <Label Text="{Binding  TimePeriodText}" />
                                 </StackLayout>

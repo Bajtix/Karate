@@ -7,7 +7,7 @@
          x:Class="Karate.CalendarTabPage">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Fill">
-            <Button Clicked="Button_OnClicked" Text="Kalendarz" FontSize="12" />
+            <Button Clicked="Button_OnClicked" Text="Kalendarz" FontSize="42" />
             <Grid x:Name="WeekDays" ColumnDefinitions="*,*,*,*,*,*,*" ColumnSpacing="2" RowSpacing="2">
                 <Label Grid.Column="0" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="Title" Text="Pon"></Label>
                 <Label Grid.Column="1" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="Title" Text="Wt"></Label>
