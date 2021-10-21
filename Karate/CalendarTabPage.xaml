@@ -6,21 +6,30 @@
          xmlns:brusLib="clr-namespace:BrusLib;assembly=BrusLib"
          x:Class="Karate.CalendarTabPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Kalendarz" FontSize="48"></Label>
-            <Grid x:Name="WeekDisplay">
+        <StackLayout VerticalOptions="Fill">
+            <Button Clicked="Button_OnClicked" Text="Kalendarz" FontSize="12" />
+            <Grid x:Name="WeekDays" ColumnDefinitions="*,*,*,*,*,*,*" ColumnSpacing="2" RowSpacing="2">
+                <Label Grid.Column="0" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="Title" Text="Pon"></Label>
+                <Label Grid.Column="1" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="Title" Text="Wt"></Label>
+                <Label Grid.Column="2" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="Title" Text="Śr"></Label>
+                <Label Grid.Column="3" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="Title" Text="Czw"></Label>
+                <Label Grid.Column="4" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="Title" Text="Pt"></Label>
+                <Label Grid.Column="5" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="Title" Text="Sb"></Label>
+                <Label Grid.Column="6" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="Title" Text="Nd"></Label>
+            </Grid>
+            <Grid x:Name="WeekDisplay" ColumnSpacing="2" RowSpacing="2" VerticalOptions="FillAndExpand">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="karate:DisplayCalendarDay">
-                        <Frame BorderColor="Purple" Grid.Column="{Binding  WeekGridY}" Grid.Row="{Binding WeekGridX}">
+                        <Frame BorderColor="Purple" Grid.Column="{Binding WeekGridX}" Grid.Row="{Binding WeekGridY}" Padding="2">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding TapCommand}"></TapGestureRecognizer>
                             </Frame.GestureRecognizers>
-                            <StackLayout>
+                            <StackLayout VerticalOptions="Center">
                                 <Label Text="{Binding DayIndex}" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
-                                <FlexLayout BindableLayout.ItemsSource="{Binding Events}">
+                                <FlexLayout BindableLayout.ItemsSource="{Binding Events}" JustifyContent="Center" VerticalOptions="End" AlignItems="Center" AlignContent="Center" >
                                     <BindableLayout.ItemTemplate>
                                         <DataTemplate x:DataType="brusLib:CalendarEvent">
-                                            <Image Source="calendar_dot.png" HeightRequest="16" />
+                                            <Image Source="calendar_dot.png" Margin="2" HeightRequest="8" WidthRequest="8" />
                                         </DataTemplate>
                                     </BindableLayout.ItemTemplate>
                                 </FlexLayout>
