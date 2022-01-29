@@ -44,5 +44,9 @@ namespace Karate {
         private void Button_OnClicked(object sender, EventArgs e) {
             OnFirstLoad();
         }
+
+        private void ChangeMonth(object sender, EventArgs e) {
+            Navigation.PushModalAsync(new ToBeImplemented("Funkcje zmiany miesiąca już wkrótce!"));
+        }
     }
 }
