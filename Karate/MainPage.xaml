@@ -21,7 +21,7 @@
         </StackLayout>
         <StackLayout Grid.Row="1" x:Name="Loading" IsVisible="False" VerticalOptions="Center" HorizontalOptions="Center" >
             <Image Source="karate_loading.gif" WidthRequest="200"  x:Name="LoadingSpinner" IsAnimationPlaying="True"/>
-            <Label x:Name="LoadingMessage" HorizontalTextAlignment="Center" Text="jeśli to widzisz, coś się zjebało"></Label>
+            <Label x:Name="LoadingMessage" HorizontalTextAlignment="Center" Text="jeśli to widzisz, coś się zje*ało"></Label>
         </StackLayout>
         <Label Grid.Row="2" x:Name="Version" Text="..." HorizontalTextAlignment="End"></Label>
     </Grid>

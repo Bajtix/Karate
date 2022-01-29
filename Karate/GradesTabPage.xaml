@@ -6,13 +6,14 @@
              xmlns:karate="clr-namespace:Karate;assembly=Karate"
              x:Class="Karate.GradesTabPage">
     <StackLayout>
+        <Button x:Name="ChangeSemesterButton" Clicked="SemesterChange"></Button>
         <ScrollView>
             <StackLayout x:Name="SubjectsView">
                 <BindableLayout.ItemTemplate>
-                    <DataTemplate x:DataType="brusLib:Subject">
+                    <DataTemplate x:DataType="karate:DisplaySubject">
                         <StackLayout Margin="10,0">
                             <Label FontSize="Title" Text="{Binding name}"></Label>
-                            <StackLayout BindableLayout.ItemsSource="{Binding grades1}" x:Class="GradesList">
+                            <StackLayout x:Name="GradeListLayout" BindableLayout.ItemsSource="{Binding grades}" x:Class="GradesList">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate x:DataType="brusLib:Grade">
                                         <Grid ColumnDefinitions="50, *, 2*" BackgroundColor="{Binding color}" >

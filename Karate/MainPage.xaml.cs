@@ -16,8 +16,10 @@ namespace Karate {
         private void LoginActionHandler(object s, LibrusAuth.AuthEvent e) {
             Device.BeginInvokeOnMainThread(()=>{
                 LoadingMessage.Text = e.message;
-                if(e.e != null)
+                if (e.e != null) {
                     ErrorMessage.Text = $"{e.message} : {IdentifyException(e.e)}";
+                    DisplayAlert("na jowisza po trzykroć kur*a", e.message + "\n" + IdentifyException(e.e), "rydwan mi się spier**lił");
+                }
             });
             
         }
@@ -59,6 +61,7 @@ namespace Karate {
         }
 
         private async Task Auth(string u, string p) {
+            LibrusAuth.delayMultiplier = 0.2f;
             application.librusApi = await LibrusAuth.Authenticate(u, p, LoginActionHandler);
 
             if (!application.librusApi.successful) {
@@ -82,9 +85,10 @@ namespace Karate {
             if (e == null) return "";
             if (e.GetType() == typeof(WebException)) {
                 var w = e as WebException;
+                if (w.Response == null) return "Brak odpowiedzi serwera";
                 switch ((w.Response as HttpWebResponse).StatusCode) {
                     case HttpStatusCode.Forbidden:
-                        return "403: Błędne dane logowania?";
+                        return "403: Błędne dane logowania";
                     case HttpStatusCode.NotFound:
                         return "404: Błędny adres URL";
                 }

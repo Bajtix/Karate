@@ -11,6 +11,7 @@ namespace Karate {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GradesTabPage : LibPage {
         private App application;
+        private bool semester = false;
         public GradesTabPage(App application) {
             this.application = application;
             InitializeComponent();
@@ -24,26 +25,40 @@ namespace Karate {
         }
 
         public override void OnFirstLoad() {
-            ShowLoader();
-            Task.Run(FetchGrades);
+            Task.Run(() => FetchGrades());
         }
 
-        public async Task FetchGrades() {
+        public async Task FetchGrades(bool autoSem = true) {
             LibrusGrades grades = await LibrusGrades.Retrieve(application.librusApi);
-            var ss = grades.subjects.Where((w) => w.grades1.Length > 0 || w.grades2.Length > 0);
-            //BindableLayout.SetItemsSource(SubjectsView, ss);
             
-            List<Subject> subjects = new List<Subject>();
-            foreach (var s in ss) {
-                subjects.Add(s);
+            if(autoSem) semester = GuessSemester(grades);
+
+            var notEmptySubjects = grades.subjects.Where((w) => (!semester && w.grades1.Length > 0) || (semester && w.grades2.Length > 0)); // this statement got a bit complex, but basically we just check the selected semester
+            Device.BeginInvokeOnMainThread(ShowLoader);
+            List<DisplaySubject> subjects = new List<DisplaySubject>();
+            foreach (var s in notEmptySubjects) {
+                subjects.Add(new DisplaySubject(s.name, semester ? s.grades2 : s.grades1));
 
                 await Task.Delay(100);
                 
                 Device.BeginInvokeOnMainThread(() => {
                     BindableLayout.SetItemsSource(SubjectsView, subjects.ToArray());
-                    HideLoader();
+                    
                 });
             }
+            ChangeSemesterButton.Text = $"Zmień na semestr {(semester ? "1" : "2")}";
+            
+            Device.BeginInvokeOnMainThread(HideLoader);
+        }
+
+        private bool GuessSemester(LibrusGrades grades) {
+            var subs = grades.subjects.FirstOrDefault(s => s.grades2.Length > 0);
+            return subs != default(Subject);
+        }
+
+        private void SemesterChange(object sender, EventArgs e) {
+            semester = !semester;
+            Task.Run(() => FetchGrades(false));
         }
     }
 }
