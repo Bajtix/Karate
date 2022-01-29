@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <Grid RowDefinitions="52,*" Margin="10,0">
             <Grid Grid.Row="0" ColumnDefinitions="*, 90">
-                <Label FontSize="48">Wiadomości</Label>
+                <Picker x:Name="BoxPicker" Title="Wysłane" Focused="ChangeMessageBox"></Picker>
                 <Button Grid.Column="1" Text="Napisz" VerticalOptions="Center" Background="{StaticResource KAccentBrush}" TextColor="White" Clicked="CreateMessage"></Button>
             </Grid>
             

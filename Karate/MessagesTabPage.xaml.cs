@@ -41,5 +41,9 @@ namespace Karate {
         private void CreateMessage(object sender, EventArgs e) {
             Navigation.PushModalAsync(new ToBeImplemented("Pisanie wiadomości nadejdzie w przyszłości"));
         }
+
+        private void ChangeMessageBox(object sender, FocusEventArgs e) {
+            Navigation.PushModalAsync(new ToBeImplemented("Funkcje zmiany źródła wiadomości już wkrótce!"));
+        }
     }
 }
